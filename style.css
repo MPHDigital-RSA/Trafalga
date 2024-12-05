@@ -41,9 +41,30 @@ a.solid-btn:hover {
     background-color: var(--black);
 }
 
+a.outline-btn {
+    background-color: var(--white);
+    color: var(--accent-color);
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 100px;
+    border: 1px solid var(--accent-color);
+    display: inline-block;
+    transition: all 500ms ease;
+}
+
+a.outline-btn:hover {
+    background-color: var(--black);
+    color: var(--white);
+    border-color: var(--black);
+}
+
 h1 {
     font-size: 65px;
     line-height: 65px;
+}
+
+h2 {
+    font-size: 36px;
 }
 
 p {
@@ -70,6 +91,10 @@ p {
     p {
         font-size: 14px;
     }
+
+    h2 {
+        font-size: 28px;
+    }
 }
 
 .heading-and-description {
@@ -89,10 +114,6 @@ p {
     border-radius: 10px;
 }
 
-.heading-and-description h2 {
-    font-size: 36px;
-}
-
 @media (max-width: 780px) {
     .heading-and-description {
         width: 100%;
@@ -110,6 +131,50 @@ p {
         height: 4px;
         background-color: var(--accent-color);
         border-radius: 10px;
+    }
+}
+
+.two-col-flex {
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    max-width: 70em;
+}
+
+.two-col-flex .image-column {
+    max-width: 500px;
+}
+
+.two-col-flex .text-column {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+.two-col-flex .text-column .outline-btn {
+    margin-top: 10px;
+}
+
+@media (max-width: 980px) {
+    .two-col-flex {
+        flex-direction: column-reverse;
+        gap: 50px;
+    }
+
+    .two-col-flex .image-column {
+        max-width: 60%;
+    }
+
+    .two-col-flex .text-column {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 580px) {
+    .two-col-flex .image-column {
+        max-width: 80%;
     }
 }
 
@@ -270,6 +335,7 @@ header a.active {
 .services .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 50px;
     padding-block: 80px;
 }
@@ -328,4 +394,241 @@ header a.active {
         grid-template-columns: 1fr;
         gap: 10px;
     }
+}
+
+/* leading section */
+
+.leading .heading-and-description {
+    text-align: start;
+    gap: 20px;
+}
+
+/* download section */
+
+.download {
+    padding: 80px 0;
+    background-image: url(images/hero\ bg\ deco.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+.download .two-col-flex {
+    flex-direction: row-reverse;
+}
+
+.download .heading-and-description {
+    text-align: start;
+    gap: 20px;
+}
+
+@media (max-width: 980px) {
+    .download .two-col-flex {
+        flex-direction: column-reverse;
+    }
+}
+
+/* Testimonial section */
+
+.testimonials {
+    padding-bottom: 80px;
+}
+
+.testimonials .container {
+    background-image: url(images/hero\ bg\ deco.svg);
+    background-repeat: no-repeat;
+    padding-inline: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.testimonial-card {
+    padding: 60px;
+    background-color: var(--accent-color);
+    background-image: url(images/white-dots.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    color: var(--white);
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.testimonials .divider {
+    background-color: var(--white);
+}
+
+.testimonial-details {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+}
+
+.testimonial-details .founder {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    width: 600px;
+}
+
+.testimonial-details .founder .avatar {
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--white);
+    background-image: url(images/guy.png);
+    background-size: cover;
+    border-radius: 150px;
+}
+
+.testimonial-details p {
+    color: var(--white);
+}
+
+.testimonial-card .name {
+    font-weight: 800;
+    font-size: 22px;
+}
+
+.testimonials .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.testimonials .pagination img {
+    cursor: pointer;
+}
+
+.nav-circles {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-circles .circle {
+    width: 10px;
+    height: 10px;
+    background-color: #5b9af334;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.nav-circles .circle.active {
+    background-color: #5b9af3;
+}
+
+@media (max-width: 1200px) {
+    .testimonials .container {
+        padding-inline: 50px;
+    }
+}
+
+@media (max-width: 980px) {
+    .testimonials .container {
+        padding-inline: 50px;
+    }
+
+    .testimonial-card {
+        padding: 40px;
+    }
+
+    .testimonials .heading-and-description {
+        width: 100%;
+    }
+
+    .testimonial-card {
+        gap: 20px;
+    }
+
+    .testimonial-details {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
+@media (max-width: 780px) {
+    .testimonial-details {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .testimonials .heading-and-description {
+        padding-top: 0;
+    }
+
+    .testimonial-details .founder {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .testimonial-details .statement {
+        text-align: center;
+    }
+
+    .testimonials .pagination {
+        gap: 50px;
+    }
+}
+
+/* blog */
+
+.blog {
+    background-image: url(images/blog-bg.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+
+}
+
+.blog .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.blog-item {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.blog-image {
+    height: 250px;
+}
+
+.blog-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.blog-items {
+    display: flex;
+    gap: 30px;
+
+    background-image: url(images/hero\ bg\ deco.svg);
+    background-repeat: no-repeat;
+    padding: 4em 4em 2em 4em;
+}
+
+.blog-text {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.blog-text a {
+    text-decoration: none;
+    color: var(--accent-color);
+    display: block;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
